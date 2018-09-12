@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 1667681421}
   - component: {fileID: 1667681420}
   - component: {fileID: 1667681419}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,8 +437,8 @@ GameObject:
   - component: {fileID: 2119257044}
   - component: {fileID: 2119257043}
   - component: {fileID: 2119257042}
-  m_Layer: 0
-  m_Name: Capsule
+  m_Layer: 9
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -460,6 +460,7 @@ MonoBehaviour:
   senX: 0
   player: {fileID: 0}
   cam: {fileID: 0}
+  bomb: {fileID: 1571643228260798, guid: d079990ec1a47e646bb5276dd7814d0b, type: 2}
 --- !u!143 &2119257043
 CharacterController:
   m_ObjectHideFlags: 0
