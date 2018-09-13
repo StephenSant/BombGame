@@ -44,9 +44,10 @@ public class PlayerController : MonoBehaviour
             transform.position = spawnpoint;
         }
 
+        //Shoot
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(bomb,transform.position,cam.transform.rotation,null);
+            Instantiate(bomb, cam.transform.position,cam.transform.rotation,null);
         }
     }
 }

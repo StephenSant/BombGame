@@ -11,7 +11,7 @@ public class Bomb : MonoBehaviour
 	void Start ()
     {
         rigidbody = GetComponent<Rigidbody>();
-        rigidbody.AddForce(Vector3.forward * shootForce, ForceMode.Impulse);
+        rigidbody.AddForce(transform.forward * shootForce, ForceMode.Impulse);
 	}
 	
 	// Update is called once per frame
