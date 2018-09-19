@@ -113,7 +113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootForce: 5
-  rigidbody: {fileID: 0}
+  rigidbody: {fileID: 54268050456231102}
+  fuseTime: 2
+  explosionTime: 1
+  explosionForce: 100
+  explosionRadius: 100
 --- !u!135 &135272393256251380
 SphereCollider:
   m_ObjectHideFlags: 1
