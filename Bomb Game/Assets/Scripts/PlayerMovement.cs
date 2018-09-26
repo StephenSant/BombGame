@@ -15,13 +15,20 @@ public class PlayerMovement : MonoBehaviour
     private bool grounded;
     float rotationY = 0.0f;
     Vector3 moveDir;
+    Vector3 spawnPoint;
+
+    public Animator anim;
 
     // Use this for initialization
     void Start ()
     {
         camera = GameObject.Find("Main Camera");
         rigidbody = GetComponent<Rigidbody>();
-	}
+        spawnPoint = transform.position;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+    }
 
     // Update is called once per frame
     void Update ()
@@ -45,6 +52,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Instantiate(bomb, camera.transform.position, camera.transform.rotation);
+            anim.SetBool("Fire", true);
+            
+        }
+        if (transform.position.y < -10)
+        {
+            transform.position = spawnPoint;
         }
     }
 }

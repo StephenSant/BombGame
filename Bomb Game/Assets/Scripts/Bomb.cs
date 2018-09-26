@@ -7,16 +7,17 @@ public class Bomb : MonoBehaviour
     public float shootForce;
     public Rigidbody rigidbody;
     public float fuseTime = 5;
-    public float explosionTime = 1;
+    public float explosionTime = 1f;
     public float explosionForce;
     public float explosionRadius;
+    public GameObject particals;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.AddForce(transform.forward * shootForce, ForceMode.Impulse);
-	}
+    }
 
     private void OnDrawGizmos()
     {
@@ -24,11 +25,12 @@ public class Bomb : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         fuseTime -= Time.deltaTime;
         if (fuseTime <= 0)
         {
+
             Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
             foreach (Collider hit in colliders)
             {
@@ -41,10 +43,15 @@ public class Bomb : MonoBehaviour
             explosionTime -= Time.deltaTime;
             rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             GetComponent<MeshRenderer>().enabled = false;
+            if (GetComponentInChildren<ParticleSystem>() == null)
+            {
+                Instantiate(particals, transform);
+            }
             if (explosionTime <= 0)
             {
                 Destroy(this.gameObject);
+
             }
         }
-	}
+    }
 }

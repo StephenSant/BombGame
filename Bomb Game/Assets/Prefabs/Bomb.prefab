@@ -115,9 +115,10 @@ MonoBehaviour:
   shootForce: 10
   rigidbody: {fileID: 54268050456231102}
   fuseTime: 2
-  explosionTime: 1
-  explosionForce: 2.5
+  explosionTime: 0.5
+  explosionForce: 15
   explosionRadius: 5
+  particals: {fileID: 1380341494591422, guid: ad2aaed888454e3468dbd716a03676cb, type: 2}
 --- !u!135 &135272393256251380
 SphereCollider:
   m_ObjectHideFlags: 1
