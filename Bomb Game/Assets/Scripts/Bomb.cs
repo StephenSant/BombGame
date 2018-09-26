@@ -33,14 +33,14 @@ public class Bomb : MonoBehaviour
             foreach (Collider hit in colliders)
             {
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
-                if (rb != null)
+                if (rb != null && rb.tag != "Player")
                 {
                     rb.AddExplosionForce(explosionForce, transform.position, explosionRadius, 0, ForceMode.Impulse);
                 }
             }
             explosionTime -= Time.deltaTime;
             rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-            //GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<MeshRenderer>().enabled = false;
             if (explosionTime <= 0)
             {
                 Destroy(this.gameObject);
